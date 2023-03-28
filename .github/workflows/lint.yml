@@ -13,9 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - name: ESLint setup
-        run: npm init @eslint/config
-      
-      - name: ESLint (JS/TS) Action
-        uses: iCrawl/action-eslint@v1
+      - name: Install modules
+        run: yarn
+      - name: Run ESLint
+        run: eslint . --ext .js,.jsx,.ts,.tsx

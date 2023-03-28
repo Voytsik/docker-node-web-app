@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Publish the Docker image
-      run: docker push voytsik/node-web-app
+      run: docker push voytsik/node-web-app:v3

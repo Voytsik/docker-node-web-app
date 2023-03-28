@@ -1,0 +1,26 @@
+name: Build project
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Use Node.js 15
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15
+
+      - name: yarn install
+        run: yarn install
+        
+      - name: eslint
+        uses: icrawl/action-eslint@v1
+        with:
+          custom-glob: apps # only if a different glob is needed, default: src
